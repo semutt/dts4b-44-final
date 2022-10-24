@@ -10,6 +10,7 @@ const CountryList = () => {
     const countries = useCountryStore(selectCountries);
     const fetchCountries = useCountryStore(selectFetchCountries);
     const countriesReady = useCountryStore(selectCountriesReady);
+    let page = 1;
 
     useEffect(() => {
         fetchCountries();
@@ -81,13 +82,13 @@ const CountryList = () => {
                     ))
                 }
             </Box>
-            <Button
+            {/* <Button
                 variant="contained"
                 sx={{ ml: 2, mr: 2 }}
-                onClick={() => setNextPage("2")}
+                onClick={() => setNextPage(page++)}
             >
                 Load More
-            </Button>
+            </Button> */}
             <div>Created by orang</div>
         </Box>
     );
