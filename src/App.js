@@ -5,9 +5,12 @@ import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="flex bg-primary">
-      <Sidebar className="flex-1"/>
-      <NavBar className="flex-1"/>
+    <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
+      
+      <div className="flex flex-col flex-none w-full">
+        <NavBar className="flex-1"/>
+        <Sidebar />
+      </div>
     </div>
   );
 }
