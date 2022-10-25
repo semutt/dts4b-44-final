@@ -10,7 +10,6 @@ const CountryList = () => {
     const countries = useCountryStore(selectCountries);
     const fetchCountries = useCountryStore(selectFetchCountries);
     const countriesReady = useCountryStore(selectCountriesReady);
-    let page = 1;
 
     useEffect(() => {
         fetchCountries();
@@ -78,18 +77,11 @@ const CountryList = () => {
             }}>
                 {
                     countries.map(country => (
-                        <CountryCard key={country.name} country={country}></CountryCard>
+                        <CountryCard key={country.name} country={country}></CountryCard>                        
                     ))
                 }
             </Box>
-            {/* <Button
-                variant="contained"
-                sx={{ ml: 2, mr: 2 }}
-                onClick={() => setNextPage(page++)}
-            >
-                Load More
-            </Button> */}
-            <div>Created by orang</div>
+            <div>Created by DTS-4B-44</div>
         </Box>
     );
 }
