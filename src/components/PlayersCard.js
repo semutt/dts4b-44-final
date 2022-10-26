@@ -1,14 +1,14 @@
 import React from 'react'
 import '../asssests/css/tailwind.css'
 
-const PlayersCard = () => {
+const PlayersCard = ({ item }) => {
   return (
     <div className="bg-base-100 rounded-box col-span-3 row-span-3 mx-2 grid w-72 flex-shrink-0 place-items-center items-center gap-4 p-4 py-8 shadow-xl xl:mx-0 xl:w-full svelte-1n6ue57">
         <div className="dropdown">
             <div tabindex="0">
                 <div className="avatar">
                     <div className="mask mask-squircle bg-base-content h-24 w-24 bg-opacity-10 p-px">
-                        <img src="/tailwind-css-component-profile-1@94w.jpg" width="94" height="94" alt="Avatar Tailwind CSS Component" className="mask mask-squircle" />
+                        <img src={item.image_path} width="94" height="94" alt="Avatar Tailwind CSS Component" className="mask mask-squircle" />
                     </div>
                 </div>
             </div>
@@ -17,13 +17,13 @@ const PlayersCard = () => {
             <div className="dropdown w-full">
                 <div tabindex="0">
                     <div className="text-center">
-                        <div className="text-lg font-extrabold">Betsy Braddock</div> 
+                        <div className="text-lg font-extrabold">{item.fullname}</div> 
                         <div className="text-base-content/70 my-3 text-sm">
-                            Strategic Art Manager
+                            Nationality {item.nationality}
                             <br />
-                            Global Illustration Observer
+                            Height {item.height}
                             <br />
-                            Business Alignment Developer
+                            weight {item.weight}
                         </div>
                     </div>
                 </div> 

@@ -13,10 +13,13 @@ const CountryList = () => {
   }, []);
 
   return (
-    <div className='grid grid-cols-12 gap-6'>
-        {country.map((item) => (
-            <CountriCard key={item.id} item={item} />
-        ))}
+    <div>
+        <h1 className='text-3xl font-bold flex justify-center mt-20'>Select Player Country</h1>
+        <div className='flex flex-wrap justify-center mt-10 mb-10'>
+            {country.map((item) => (
+                <CountriCard key={item.id} item={item} />
+            ))}
+        </div>
     </div>
   )
 }

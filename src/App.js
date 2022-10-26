@@ -1,21 +1,16 @@
-import Sidebar from './components/Sidebar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './asssests/css/tailwind.css'
-import NavBar from './components/NavBar';
-import CountryList from './containers/CountryList';
-import PlayersCard from './components/PlayersCard';
+import Countries from './pages/Countries';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="flex h-full bg-gray-50 dark:bg-gray-900">
-      <div className="flex flex-col w-full">
-        <NavBar className="flex-1"/>
-        <div className="flex flex-row w-full">
-          <Sidebar />
-          <CountryList />
-          <PlayersCard />
-      </div>
-    </div>
-  </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path='countries' element={<Countries />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -11,7 +11,7 @@ const useSportmonkStore = create(
         (set) => ({
             country: initialCountries,
             fetchCountry: async () => {
-                const { data: axiosData } = await axios.get('https://soccer.sportmonks.com/api/v2.0/leagues?api_token=' + api_token);
+                const { data: axiosData } = await axios.get('https://soccer.sportmonks.com/api/v2.0/countries?api_token=' + api_token);
 
                 set(produce((state) => {
                     state.country = axiosData.data;
