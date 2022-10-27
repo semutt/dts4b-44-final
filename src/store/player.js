@@ -8,7 +8,7 @@ const api_token = 'uYSsxRW1qFBcyx8adfNijlGrJW9XkaL9lMexoMQrTplcBvMjATNrU2hY3k3y'
 const base_url = 'https://soccer.sportmonks.com/api/v2.0/' 
 
 const player_name = '';
-const country_id = '';
+const country_id = '2';
 
 const usePlayersStore = create(
     persist(
@@ -16,7 +16,7 @@ const usePlayersStore = create(
             players: initialPlayers,
 
             fetchPlayerByCountry: async () => {
-                const { data: axiosData } = await axios.get(base_url + '/countries/' + country_id + '/players?api_token=' + api_token + '&include=position,team,country');
+                const { data: axiosData } = await axios.get(base_url + 'countries/' + country_id + '/players?api_token=' + api_token + '&include=position,team,country');
 
                 set(produce((state) => {
                     state.players = axiosData.data;
